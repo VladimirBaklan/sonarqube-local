@@ -15,7 +15,7 @@ jobs:
           java-version: 1.13
       - name: Build plugins
         run: mvn clean package
-        working-directory: ./unused-public-methods
+        working-directory: ./plugins
       - name: Publish Sonarqube
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
