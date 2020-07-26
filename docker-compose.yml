@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  sonarqube:
+    image: uladzimirbaklan/sonarqube-local
+    ports:
+      - "9000:9000"

@@ -19,12 +19,12 @@ import org.sonar.plugins.php.api.tree.expression.IdentifierTree;
 import org.sonar.plugins.php.api.tree.expression.LiteralTree;
 import org.sonar.plugins.php.api.visitors.PHPVisitorCheck;
 @Rule(
-        key = UselessPublicMethods.KEY,
+        key = UnusedPublicMethods.KEY,
         priority = Priority.MAJOR,
         name = "Unused method.",
         tags = {"unused", "custom"}
 )
-public class UselessPublicMethods extends PHPVisitorCheck {
+public class UnusedPublicMethods extends PHPVisitorCheck {
     public static final String KEY = "345834905834095834905";
     private static final String MESSAGE = "Remove this unused \"%s\" method.";
 

@@ -21,7 +21,7 @@ public class PhpRules implements RulesDefinition, PHPCustomRuleRepository {
 
     @Override
     public ImmutableList<Class> checkClasses() {
-        return ImmutableList.of(UselessPublicMethods.class);
+        return ImmutableList.of(UnusedPublicMethods.class);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class PhpRules implements RulesDefinition, PHPCustomRuleRepository {
         repository.rules().forEach(rule -> rule.setHtmlDescription(loadResource("/org/sonar/l10n/php/rules/custom/" + rule.key() + ".html")));
 
         Map<String, String> remediationCosts = new HashMap<>();
-        remediationCosts.put(UselessPublicMethods.KEY, "5min");
+        remediationCosts.put(UnusedPublicMethods.KEY, "5min");
         repository.rules().forEach(rule -> rule.setDebtRemediationFunction(
                 rule.debtRemediationFunctions().constantPerIssue(remediationCosts.get(rule.key()))));
 
